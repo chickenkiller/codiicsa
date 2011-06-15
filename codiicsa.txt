@@ -100,13 +100,12 @@ from the XML
 
 is
 
-[source,python]
+ifdef::docname[[source,python]]
 ----
-
 out = Out( '<<' ) + elem.get( 'linkend' ) + ',' + elem.text \
       + self.Children( elem ) + '>>' + elem.tail
-
 ----
+
 
 Note that if the first item had not been made into an _Out_ object it would 
 still have worked but the first four items ( '<<', the 'linkedn' attribute 
@@ -146,7 +145,7 @@ boilerplate.
 
 The user python file (say my_file.py) is:
 
-[source,python]
+ifdef::docname[[source,python]]
 ----
 import codiicsa # <1>
 import sys # to get the command line args
@@ -209,7 +208,7 @@ that provide common processing capabilities.
 All names begin with an uppercase to minimise clashes with methods named for 
 tag names.  If tag names do clash call the library method by:
 
-[source,python]
+ifdef::docname[[source,python]]
 ----
 self.Processing.method( ... )
 ----
@@ -217,7 +216,7 @@ self.Processing.method( ... )
 Pre
 ~~~
 
-[source,python]
+ifdef::docname[[source,python]]
 ----
 self.Pre( elem, inline = False, attrs = [] )
 ----
@@ -238,7 +237,7 @@ line by itself.
 Process
 ~~~~~~~
 
-[source,python]
+ifdef::docname[[source,python]]
 ----
 self.Process( elem )
 ----
@@ -251,7 +250,7 @@ NOTE: Use __self.Children()__ to process children.
 Children
 ~~~~~~~~
 
-[source,python]
+ifdef::docname[[source,python]]
 ----
 self.Children( elem, do = None, dont = set() )
 ----
@@ -270,7 +269,7 @@ returns:: an _Out_ object
 Strip, Stripl, Stripr
 ~~~~~~~~~~~~~~~~~~~~~
 
-[source,python]
+ifdef::docname[[source,python]]
 ----
 self.Strip( from, chars )
 self.Stripl( from, chars )
@@ -295,7 +294,7 @@ Underline_title
 Generates an Asciidoc underlined title from the _<title>_ child of the element.
 The underline character used is chosen from the current _<section>_ nesting level.
 
-[source,python]
+ifdef::docname[[source,python]]
 ----
 self.Underline_title( elem )
 ----
@@ -309,7 +308,7 @@ Block_title
 ~~~~~~~~~~~
 
 Generates an Asciidoc block title from the _<title>_ child of the element.
-[source,python]
+ifdef::docname[[source,python]]
 ----
 self.Block_title( elem )
 ----
@@ -330,7 +329,7 @@ convert
 
 Use the specified class to convert the input file to the output file.
 
-[source,python]
+ifdef::docname[[source,python]]
 ----
 convert( infile, outfile, \
          dbclass = None, cargs = [], kcargs = {}, \
